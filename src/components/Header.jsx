@@ -34,9 +34,12 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 flex w-full flex-row items-center justify-between bg-zinc-900 px-[100px] py-1 text-zinc-200">
-      <Logo />
-      <NavList />
-    </header>
+    <>
+      <header className="fixed top-0 flex h-14 w-full flex-row items-center justify-between bg-zinc-900 px-[100px] text-zinc-200">
+        <Logo />
+        <NavList />
+      </header>
+      <div className="h-14 bg-zinc-900"></div>
+    </>
   );
 }
