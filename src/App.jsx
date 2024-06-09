@@ -10,7 +10,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/portfolio/" element={<Home />} />
+        <Route exact path="/portfolio/home" element={<Home />} />
         <Route exact path="/portfolio/about" element={<About />} />
         <Route exact path="/portfolio/projects" element={<Projects />} />
         <Route exact path="/portfolio/docs" element={<Docs />} />
