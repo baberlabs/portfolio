@@ -11,7 +11,7 @@ export default function Header() {
   const nav = {
     activeClasses: "font-black text-blue-500",
     defaultClasses: "font-semibold",
-    links: ["Home", "About", "Projects", "Docs", "Contact"],
+    links: ["", "About", "Projects", "Docs", "Contact"],
   };
 
   function NavList() {
@@ -21,11 +21,12 @@ export default function Header() {
           <NavLink
             key={`${index}-${navlink}`}
             to={`/portfolio/${navlink.toLowerCase()}`}
+            end={navlink === ""}
             className={({ isActive }) =>
               isActive ? nav.activeClasses : nav.defaultClasses
             }
           >
-            {navlink}
+            {navlink === "" ? "Home" : navlink}
           </NavLink>
         ))}
       </nav>
