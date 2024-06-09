@@ -6,9 +6,12 @@ import Projects from "./pages/Projects";
 import Docs from "./pages/Docs";
 import Contact from "./pages/Contact";
 
+import Header from "./components/Header";
+
 export default function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route exact path="/portfolio/" element={<Home />} />
         <Route exact path="/portfolio/about" element={<About />} />
