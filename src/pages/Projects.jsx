@@ -1,4 +1,4 @@
-import { PROJECTS } from "../my-projects";
+import { PROJECTS } from "../projects";
 import { SCREENSHOTS } from "../images";
 import { imageName, projectName } from "../functions";
 
