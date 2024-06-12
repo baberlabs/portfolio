@@ -13,11 +13,11 @@ export default function App() {
     <Router>
       <Header />
       <Routes>
-        <Route exact path="/portfolio/" element={<Home />} />
-        <Route exact path="/portfolio/about" element={<About />} />
-        <Route exact path="/portfolio/projects" element={<Projects />} />
-        <Route exact path="/portfolio/docs" element={<Docs />} />
-        <Route exact path="/portfolio/contact" element={<Contact />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/projects" element={<Projects />} />
+        <Route exact path="/docs" element={<Docs />} />
+        <Route exact path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 export default function Header() {
   function Logo() {
     return (
-      <Link to="/portfolio/home" className="text-xl font-black">
+      <Link to="/" className="text-xl font-black">
         BaberLabs
       </Link>
     );
@@ -20,7 +20,7 @@ export default function Header() {
         {nav.links.map((navlink, index) => (
           <NavLink
             key={`${index}-${navlink}`}
-            to={`/portfolio/${navlink.toLowerCase()}`}
+            to={`/${navlink.toLowerCase()}`}
             end={navlink === ""}
             className={({ isActive }) =>
               isActive ? nav.activeClasses : nav.defaultClasses
