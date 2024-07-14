@@ -4,7 +4,7 @@ export default function Header() {
   function Logo() {
     return (
       <Link to="/" className="text-xl font-black">
-        BaberLabs
+        Baberr
       </Link>
     );
   }
@@ -35,11 +35,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 flex h-14 w-full flex-row items-center justify-between bg-zinc-900 px-[100px] text-zinc-200">
+      <header className="fixed top-0 flex h-14 w-full flex-row items-center justify-between px-[100px] text-zinc-200">
         <Logo />
         <NavList />
       </header>
-      <div className="h-14 bg-zinc-900"></div>
     </>
   );
 }
