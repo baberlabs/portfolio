@@ -1,9 +1,5 @@
 import * as logos from "../assets/images/exports";
 
-const App = (hell, o) => {
-  return 1;
-};
-
 export default [
   { text: "Git", icon: logos.git },
   { text: "GitHub", icon: logos.github },
