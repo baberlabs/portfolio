@@ -18,6 +18,18 @@ import habitTracker from "./screenshots/habit-tracker.png";
 import taskManager from "./screenshots/task-manager.png";
 import todoApp from "./screenshots/todo-app.png";
 
+// contacts
+import discord from "./contacts/discord.svg";
+import email from "./contacts/email.svg";
+import facebook from "./contacts/facebook.svg";
+// import github from "./contacts/github.svg"
+import instagram from "./contacts/instagram.svg";
+import linkedin from "./contacts/linkedin.svg";
+import phone from "./contacts/phone.svg";
+import slack from "./contacts/slack.svg";
+import twitter from "./contacts/twitter.svg";
+import whatsapp from "./contacts/whatsapp.svg";
+
 export {
   git,
   github,
@@ -35,4 +47,13 @@ export {
   habitTracker,
   taskManager,
   todoApp,
+  discord,
+  email,
+  facebook,
+  instagram,
+  linkedin,
+  phone,
+  slack,
+  twitter,
+  whatsapp,
 };
