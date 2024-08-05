@@ -1,33 +1,69 @@
-import projects from "../data/projects";
+import { Link } from "react-router-dom";
+import { GitHub, Language } from "@mui/icons-material";
+import LinkButton from "../components/LinkButton";
+import imageBookle from "../assets/bookle.svg";
 
 export default function Projects() {
+  const projects = [
+    {
+      title: "Bookle",
+      live: "https://baberr.com/projects/bookle",
+      github: "https://github.com/baberlabs/bookle",
+      description: "Search for your favourite books",
+      image: imageBookle,
+      built_using: "React, Tailwind CSS, Axios, Google API",
+    },
+    {
+      title: "Booklew",
+      live: "https://baberr.com/projects/bookle",
+      github: "https://github.com/baberlabs/bookle",
+      description: "Search for your favourite books",
+      image: imageBookle,
+      built_using: "React, Tailwind CSS, Axios, Google API",
+    },
+    {
+      title: "Bookled",
+      live: "https://baberr.com/projects/bookle",
+      github: "https://github.com/baberlabs/bookle",
+      description: "Search for your favourite books",
+      image: imageBookle,
+      built_using: "React, Tailwind CSS, Axios, Google API",
+    },
+  ];
+
   return (
-    <main className="flex h-screen flex-col gap-10 bg-zinc-800 px-[100px] py-10 text-zinc-200">
-      <h1 className="text-center text-4xl font-black">Projects</h1>
-      <ul className="flex flex-row flex-wrap justify-center gap-8">
-        {projects.map((project, index) => {
-          return (
-            <li key={index} className="flex h-fit w-[300px] flex-col shadow-xl">
-              <a
-                href={project.live}
-                className="bg-zinc-900 p-3 font-bold underline"
-              >
-                {project.text}
-              </a>
-              <img
-                src={project.image}
-                alt={`Screenshot of ${project.text} Project`}
+    <section className="flex min-h-screen flex-col gap-4 px-8 py-4 md:px-32 lg:px-64">
+      <h2 className="hidden">Projects</h2>
+      <ul className="mt-24 flex flex-col gap-24 pb-28 pt-10">
+        {projects.map((project) => (
+          <li
+            key={project.title}
+            className="flex flex-col items-end gap-2 text-right"
+          >
+            <div className="mt-2 text-3xl font-black">{project.title}</div>
+            <p>{project.description}</p>
+            {/* <div className="mt-2 h-44 w-full rounded-xl bg-white shadow-xl"></div> */}
+            <img
+              className="mt-2 rounded-xl shadow-xl"
+              src={project.image}
+              alt={project.title}
+            />
+            <div className="mt-2 text-sm opacity-50">{project.built_using}</div>
+            <div className="flex flex-row gap-4">
+              <LinkButton
+                link={project.live}
+                text="Live Demo"
+                icon={<Language />}
               />
-              <a
-                href={project.repo}
-                className="bg-zinc-800 p-2 text-right underline"
-              >
-                GitHub
-              </a>
-            </li>
-          );
-        })}
+              <LinkButton
+                link={project.github}
+                text={"GitHub"}
+                icon={<GitHub />}
+              />
+            </div>
+          </li>
+        ))}
       </ul>
-    </main>
+    </section>
   );
 }

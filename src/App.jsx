@@ -1,24 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "./context/ThemeProvider";
+import { NavLink, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Docs from "./pages/Docs";
-import Contact from "./pages/Contact";
-
+import ThemeToggler from "./components/ThemeToggler";
 import Header from "./components/Header";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Projects from "./pages/Projects";
 
 export default function App() {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   return (
-    <Router>
+    <div className={`bg-background text-text font-[Inter] theme-${theme}`}>
+      {/* <div className=""> */}
+      {/* <div className="bg z-0 min-h-screen w-full">hello</div> */}
+      <ThemeToggler theme={theme} setTheme={setTheme} />
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/projects" element={<Projects />} />
-        <Route exact path="/docs" element={<Docs />} />
-        <Route exact path="/contact" element={<Contact />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-    </Router>
+    </div>
   );
 }

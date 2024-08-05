@@ -1,44 +1,61 @@
-import { Link, NavLink } from "react-router-dom";
+import {
+  HomeIcon,
+  BriefcaseIcon,
+  IdentificationIcon,
+  BookOpenIcon,
+} from "@heroicons/react/24/solid";
+
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
-  function Logo() {
-    return (
-      <Link to="/" className="text-xl font-black">
-        Baberr
-      </Link>
-    );
-  }
-  const nav = {
-    activeClasses: "font-black text-blue-500",
-    defaultClasses: "font-semibold",
-    links: ["", "About", "Projects", "Docs", "Contact"],
-  };
-
-  function NavList() {
-    return (
-      <nav className="flex flex-row gap-10">
-        {nav.links.map((navlink, index) => (
-          <NavLink
-            key={`${index}-${navlink}`}
-            to={`/${navlink.toLowerCase()}`}
-            end={navlink === ""}
-            className={({ isActive }) =>
-              isActive ? nav.activeClasses : nav.defaultClasses
-            }
-          >
-            {navlink === "" ? "Home" : navlink}
-          </NavLink>
-        ))}
-      </nav>
-    );
-  }
-
   return (
-    <>
-      <header className="fixed top-0 flex h-14 w-full flex-row items-center justify-between px-[100px] text-zinc-200">
-        <Logo />
-        <NavList />
-      </header>
-    </>
+    <header className="">
+      <h1 className="text-text bg-background fixed left-0 top-0 z-10 w-full p-4 font-bold">
+        Baberr
+      </h1>
+      <Nav />
+    </header>
+  );
+}
+
+function Nav() {
+  const className = {
+    icon: "w-6",
+    activeLink: "flex flex-col items-center gap-2 text-button_background ",
+    defaultLink: "flex flex-col items-center gap-2 opacity-50",
+  };
+  const navLinks = [
+    { text: "Home", href: "/", icon: <HomeIcon className={className.icon} /> },
+    {
+      text: "Projects",
+      href: "/projects",
+      icon: <BriefcaseIcon className={className.icon} />,
+    },
+    {
+      text: "Blog",
+      href: "/blog",
+      icon: <BookOpenIcon className={className.icon} />,
+    },
+    {
+      text: "Contact",
+      href: "/contact",
+      icon: <IdentificationIcon className={className.icon} />,
+    },
+  ];
+  return (
+    <nav className="text-text bg-background fixed bottom-0 left-0 z-10 flex w-full flex-row justify-around py-4">
+      {navLinks.map((link) => (
+        <NavLink
+          key={link.text}
+          to={link.href}
+          className={({ isActive }) =>
+            isActive ? className.activeLink : className.defaultLink
+          }
+        >
+          {link.icon}
+          <span className="text-sm">{link.text}</span>
+        </NavLink>
+      ))}
+    </nav>
   );
 }
