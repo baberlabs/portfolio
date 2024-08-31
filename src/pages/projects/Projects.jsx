@@ -1,36 +1,9 @@
-import { Link } from "react-router-dom";
 import { GitHub, Language } from "@mui/icons-material";
-import LinkButton from "../components/LinkButton";
-import imageBookle from "../assets/bookle.svg";
+import LinkButton from "../../components/LinkButton";
+
+import { projects } from "../../projects";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Bookle",
-      live: "https://baberr.com/projects/bookle",
-      github: "https://github.com/baberlabs/bookle",
-      description: "Search for your favourite books",
-      image: imageBookle,
-      built_using: "React, Tailwind CSS, Axios, Google API",
-    },
-    {
-      title: "Booklew",
-      live: "https://baberr.com/projects/bookle",
-      github: "https://github.com/baberlabs/bookle",
-      description: "Search for your favourite books",
-      image: imageBookle,
-      built_using: "React, Tailwind CSS, Axios, Google API",
-    },
-    {
-      title: "Bookled",
-      live: "https://baberr.com/projects/bookle",
-      github: "https://github.com/baberlabs/bookle",
-      description: "Search for your favourite books",
-      image: imageBookle,
-      built_using: "React, Tailwind CSS, Axios, Google API",
-    },
-  ];
-
   return (
     <section className="flex min-h-screen flex-col gap-4 px-8 py-4 md:px-32 lg:px-64">
       <h2 className="hidden">Projects</h2>

@@ -7,7 +7,7 @@ import {
   Send,
   WhatsApp,
 } from "@mui/icons-material";
-import Button from "../components/Button";
+import Button from "../../components/Button";
 import { useEffect, useState } from "react";
 
 export default function Contact() {
@@ -30,7 +30,7 @@ export default function Contact() {
             type="text"
             id="name"
             placeholder="Your name"
-            className={`bg-background border-text roundedpy-2 w-52 italic outline-none`}
+            className={`roundedpy-2 w-52 border-text bg-background italic outline-none`}
             autoComplete="true"
           />
         </div>
@@ -42,7 +42,7 @@ export default function Contact() {
             type="email"
             id="email"
             placeholder="Your email"
-            className="bg-background border-text w-64 rounded py-2 italic outline-none"
+            className="w-64 rounded border-text bg-background py-2 italic outline-none"
             autoComplete="true"
           />
         </div>
@@ -53,7 +53,7 @@ export default function Contact() {
           <textarea
             id="message"
             placeholder="Your message"
-            className="bg-background border-text h-20 w-56 rounded py-2 italic outline-none"
+            className="h-20 w-56 rounded border-text bg-background py-2 italic outline-none"
           ></textarea>
         </div>
         <Button text="Message Me" icon={<Message />} />

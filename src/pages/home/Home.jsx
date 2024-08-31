@@ -1,5 +1,6 @@
 import { AdsClick, Article } from "@mui/icons-material";
-import LinkButton from "../components/LinkButton";
+
+import LinkButton from "../../components/LinkButton";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-2">
         <LinkButton text="Hire Me" link="/contact" icon={<AdsClick />} />
-        <LinkButton text="View CV" link="/cv" icon={<Article />} />
+        <LinkButton text="About Me" link="/cv" icon={<Article />} />
       </div>
     </section>
   );
