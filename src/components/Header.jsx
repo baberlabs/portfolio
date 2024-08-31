@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <header className="">
-      <h1 className="text-text bg-background fixed left-0 top-0 z-10 w-full p-4 font-bold">
+      <h1 className="fixed left-0 top-0 z-10 w-full bg-background p-4 font-bold text-text">
         Baberr
       </h1>
       <Nav />
@@ -43,7 +43,7 @@ function Nav() {
     },
   ];
   return (
-    <nav className="text-text bg-background fixed bottom-0 left-0 z-10 flex w-full flex-row justify-around py-4">
+    <nav className="fixed bottom-0 left-0 z-10 flex w-full flex-row justify-around bg-background py-4 text-text md:bottom-8 md:left-[50%] md:w-fit md:translate-x-[-50%] md:gap-10 md:rounded-full md:px-16 md:py-4 md:shadow-xl md:shadow-black/30">
       {navLinks.map((link) => (
         <NavLink
           key={link.text}
