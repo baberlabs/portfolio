@@ -16,8 +16,7 @@ import Button from "../../components/Button";
 
 import { ThemeContext } from "../../context/ThemeProvider";
 
-import ICONS from "../../assets/skills/exports";
-
+import { skills } from "../../skills";
 import { projects } from "../../top-projects";
 
 import defaultImage from "../../assets/default-image.png";
@@ -68,24 +67,6 @@ export default function CV() {
         </div>
       </section>
 
-      {/* <Section>
-        <Heading>Personal Statement</Heading>
-        <p>
-          A career changer with the drive, determination, and ambition to make a
-          significant impact in the tech industry. After spending two years as
-          an Assistant Manager at a local shop, where I enjoyed working and
-          developing other individuals through effective communication and
-          problem-solving, I realised that I wanted to build on the technical
-          skills that I learned through my Computing Diploma. In my spare time,
-          I began learning HTML, CSS, and JavaScript. Still, I found that a
-          structured learning environment at Northcoders suited me better, where
-          I could excel and further develop my skills with like-minded
-          developers. The Software Development boot camp has equipped me with
-          theoretical and practical skills. My dream is to create something
-          meaningful and contribute to the future of the IT world.
-        </p>
-      </Section> */}
-
       <Section>
         <Heading>Why I Am Here</Heading>
         <p>
@@ -115,53 +96,15 @@ export default function CV() {
 
       <Section>
         <Heading>Technologies I Can Use</Heading>
-
+        <List skills={skills} iconColor={iconColor}></List>
         <List>
-          <ListItem text="Git" icon={<ICONS.Git fill={iconColor} />} />
-          <ListItem text="GitHub" icon={<ICONS.GitHub fill={iconColor} />} />
-
-          <ListItem text="Figma" icon={<ICONS.Figma fill={iconColor} />} />
-          <ListItem
-            text="Excalidraw"
-            icon={<ICONS.Excalidraw fill={iconColor} />}
-          />
-
-          <ListItem text="HTML5" icon={<ICONS.HTML5 fill={iconColor} />} />
-          <ListItem text="CSS3" icon={<ICONS.CSS3 fill={iconColor} />} />
-          <ListItem
-            text="JavaScript"
-            icon={<ICONS.JavaScript fill={iconColor} />}
-          />
-          <ListItem text="React" icon={<ICONS.ReactJS fill={iconColor} />} />
-          <ListItem
-            text="Tailwind CSS"
-            icon={<ICONS.TailwindCSS fill={iconColor} />}
-          />
-          <ListItem text="Axios" icon={<ICONS.Axios fill={iconColor} />} />
-
-          <ListItem text="Node" icon={<ICONS.NodeJS fill={iconColor} />} />
-          <ListItem text="Express" icon={<ICONS.Express fill={iconColor} />} />
-          <ListItem
-            text="PostgreSQL"
-            icon={<ICONS.PostgreSQL fill={iconColor} />}
-          />
-
-          <ListItem text="Jest" icon={<ICONS.Jest fill={iconColor} />} />
-          <ListItem
-            text="SuperTest"
-            icon={<ICONS.SuperTest fill={iconColor} />}
-          />
+          <ListItem textOnly text="Functional Programming" />
+          <ListItem textOnly text="Test Driven Development (TDD)" />
+          <ListItem textOnly text="Agile Methodology" />
+          <ListItem textOnly text="Object Oriented Programming (OOP)" />
         </List>
-
-        <SubSection>
-          <List>
-            <ListItem textOnly text="Functional Programming" />
-            <ListItem textOnly text="Test Driven Development (TDD)" />
-            <ListItem textOnly text="Agile Methodology" />
-            <ListItem textOnly text="Object Oriented Programming (OOP)" />
-          </List>
-        </SubSection>
       </Section>
+
       <Section>
         <Heading>What I Can Do</Heading>
         <p>
@@ -180,6 +123,7 @@ export default function CV() {
           are not only powerful but also simple for people to use.
         </p>
       </Section>
+
       <Section>
         <Heading>Projects I've Built</Heading>
         <ul className="flex flex-row flex-wrap gap-4 text-sm">
@@ -192,6 +136,7 @@ export default function CV() {
         </ul>
         <List projects={projects}></List>
       </Section>
+
       <Section>
         <Heading>Beyond the Code</Heading>
         <p>
@@ -231,13 +176,30 @@ function Heading({ children }) {
   return <h3 className="text-xl font-black uppercase">{children}</h3>;
 }
 
-function List({ children, projects }) {
+function List({ children, projects, skills, iconColor }) {
   if (projects) {
     return (
       <ul className="flex flex-row flex-wrap gap-8">
         {projects.map((project) => {
           const id = uuid();
           return <ListItem key={id} project={project} />;
+        })}
+      </ul>
+    );
+  }
+  if (skills) {
+    console.log(skills);
+    return (
+      <ul className="flex flex-row flex-wrap gap-2">
+        {skills.map((skill) => {
+          const id = uuid();
+          return (
+            <ListItem
+              key={id}
+              text={skill.text}
+              icon={<skill.icon fill={iconColor} />}
+            />
+          );
         })}
       </ul>
     );

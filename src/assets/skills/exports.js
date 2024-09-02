@@ -13,6 +13,8 @@ import JavaScript from "./js.svg";
 import TailwindCSS from "./tailwindcss.svg";
 import ReactJS from "./react.svg";
 import Axios from "./axios.svg";
+import Dart from "./dart.svg";
+import Flutter from "./flutter.svg";
 
 // backend
 import NodeJS from "./nodejs.svg";
@@ -35,6 +37,8 @@ const ICONS = {
   TailwindCSS,
   ReactJS,
   Axios,
+  Dart,
+  Flutter,
   NodeJS,
   Express,
   SQL,
