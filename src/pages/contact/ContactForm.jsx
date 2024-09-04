@@ -18,7 +18,7 @@ export default function ContactForm() {
           type="text"
           id="name"
           placeholder="Your name"
-          className={`roundedpy-2 w-52 border-text bg-background italic outline-none`}
+          className="w-52 rounded border-text bg-background py-2 italic outline-none"
           autoComplete="true"
         />
       </div>
@@ -30,7 +30,7 @@ export default function ContactForm() {
           type="email"
           id="email"
           placeholder="Your email"
-          className="w-64 rounded border-text bg-background py-2 italic outline-none"
+          className="w-64 rounded border-text bg-background italic outline-none"
           autoComplete="true"
         />
       </div>
