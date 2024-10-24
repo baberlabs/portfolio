@@ -12,6 +12,7 @@ import imageBaberr from "./assets/projects/baberr.gif";
 export const projects = [
   {
     title: "Northchess",
+    live: "https://northchess.netlify.app/",
     github: "https://github.com/henryloach/nc_abcs_boardgame_frontend",
     description: "An online multiplayer chess game with variant gameplay modes",
     image: imageNorthchess,
