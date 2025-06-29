@@ -325,7 +325,7 @@ const updatedProjects = [
     techStack: ["React", "Tailwind", "Node.js", "MongoDB", "Socket.IO"],
     links: [
       {
-        href: "https://chatr.baberlabs.com",
+        href: "https://chatr-3b2a.onrender.com/",
         label: "Live",
         icon: <FaGlobe />,
       },
@@ -370,17 +370,17 @@ const updatedProjects = [
     techStack: ["Flutter", "Dart", "WebSocket"],
     links: [
       {
-        href: "https://northchess.netlify.com",
+        href: "https://northchess.netlify.app",
         label: "Live",
         icon: <FaGlobe />,
       },
       {
-        href: "https://github.com/baberlabs/northchess-client",
+        href: "https://github.com/henryloach/nc_abcs_boardgame_frontend",
         label: "Client",
         icon: <FaGithub />,
       },
       {
-        href: "https://github.com/baberlabs/northchess-server",
+        href: "https://github.com/baberlabs/nc_abcs_boardgame_backend",
         label: "Server",
         icon: <FaGithub />,
       },
@@ -400,12 +400,12 @@ const updatedProjects = [
         icon: <FaGlobe />,
       },
       {
-        href: "https://github.com/baberlabs/grants4you-client",
+        href: "https://github.com/baberlabs/g4u-frontend",
         label: "Client",
         icon: <FaGithub />,
       },
       {
-        href: "https://github.com/baberlabs/grants4you-server",
+        href: "https://github.com/baberlabs/g4u-backend",
         label: "Server",
         icon: <FaGithub />,
       },
