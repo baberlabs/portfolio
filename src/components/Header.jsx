@@ -4,14 +4,13 @@ import {
   IdentificationIcon,
   BookOpenIcon,
 } from "@heroicons/react/24/solid";
-
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="">
-      <h1 className="fixed left-0 top-0 z-10 w-full bg-background p-4 font-bold text-text">
-        Baberr
+    <header>
+      <h1 className="bg-background/80 text-text fixed left-0 top-0 z-20 flex w-full items-center justify-start border-b border-white/10 p-4 text-xl font-extrabold tracking-tight shadow-lg backdrop-blur-lg md:left-1/2 md:top-0 md:translate-x-[-50%] md:shadow-lg md:shadow-black/10">
+        Baber<span className="opacity-30">r</span>
       </h1>
       <Nav />
     </header>
@@ -19,41 +18,47 @@ export default function Header() {
 }
 
 function Nav() {
-  const className = {
-    icon: "w-6",
-    activeLink: "flex flex-col items-center gap-2 text-button_background ",
-    defaultLink: "flex flex-col items-center gap-2 opacity-50",
-  };
+  const iconClass =
+    "size-6 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6 drop-shadow-md";
+  const commonLink =
+    "flex flex-col items-center px-4 py-2 rounded-xl transition-all duration-200 group";
+  const activeLink =
+    "text-button_background font-bold bg-background/90 shadow-lg scale-110";
+  const defaultLink =
+    "opacity-70 hover:opacity-100 hover:text-button_background hover:bg-background/60 hover:shadow-md";
+
   const navLinks = [
-    { text: "Home", href: "/", icon: <HomeIcon className={className.icon} /> },
+    { text: "Home", href: "/", icon: <HomeIcon className={iconClass} /> },
     {
       text: "Projects",
       href: "/projects",
-      icon: <BriefcaseIcon className={className.icon} />,
+      icon: <BriefcaseIcon className={iconClass} />,
     },
     {
       text: "Blog",
       href: "/blog",
-      icon: <BookOpenIcon className={className.icon} />,
+      icon: <BookOpenIcon className={iconClass} />,
     },
     {
       text: "Contact",
       href: "/contact",
-      icon: <IdentificationIcon className={className.icon} />,
+      icon: <IdentificationIcon className={iconClass} />,
     },
   ];
   return (
-    <nav className="fixed bottom-0 left-0 z-10 flex w-full flex-row justify-around bg-background py-4 text-text md:bottom-8 md:left-[50%] md:w-fit md:translate-x-[-50%] md:gap-10 md:rounded-full md:px-16 md:py-4 md:shadow-xl md:shadow-black/30">
+    <nav className="bg-background/80 text-text shadow-t fixed bottom-0 left-0 z-20 flex w-full flex-row items-center justify-around border-t border-white/10 py-2 shadow-2xl backdrop-blur-lg md:bottom-8 md:left-1/2 md:w-fit md:translate-x-[-50%] md:gap-4 md:rounded-2xl md:border-none md:px-6 md:py-4 md:shadow-2xl md:shadow-black/40">
       {navLinks.map((link) => (
         <NavLink
           key={link.text}
           to={link.href}
           className={({ isActive }) =>
-            isActive ? className.activeLink : className.defaultLink
+            [commonLink, isActive ? activeLink : defaultLink].join(" ")
           }
         >
           {link.icon}
-          <span className="text-sm">{link.text}</span>
+          <span className="mt-2 text-[10px] font-semibold uppercase tracking-wide">
+            {link.text}
+          </span>
         </NavLink>
       ))}
     </nav>

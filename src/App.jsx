@@ -17,7 +17,7 @@ export default function App() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <div className={`bg-background font-[Inter] text-text theme-${theme}`}>
+    <div className={`bg-background text-text theme-${theme}`}>
       <ThemeToggler theme={theme} setTheme={setTheme} />
       <Header />
       <Routes>
