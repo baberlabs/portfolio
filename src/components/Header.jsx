@@ -2,10 +2,9 @@ import { FaTerminal } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { to: "/", label: "Home" },
   { to: "/projects", label: "Projects" },
   { to: "/blog", label: "Blog" },
-  { to: "/cv", label: "CV" },
+  { to: "/about", label: "About" },
 ];
 
 const Header = () => (
