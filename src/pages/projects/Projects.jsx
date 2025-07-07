@@ -14,25 +14,46 @@ export default function Projects() {
             className="flex flex-col items-end gap-2 text-right"
           >
             <div className="mt-2 text-3xl font-black">{project.title}</div>
-            <p>{project.description}</p>
-            {/* <div className="mt-2 h-44 w-full rounded-xl bg-white shadow-xl"></div> */}
+            <p className="max-w-[600px]">{project.description}</p>
+
+            <div className="mt-2 flex flex-row flex-wrap justify-end gap-2 text-xs">
+              {project.built_using.map((tech) => (
+                <span key={tech} className="font-bold text-blue-500">
+                  @{tech}
+                </span>
+              ))}
+            </div>
             <img
-              className="mt-2 rounded-xl shadow-xl"
+              className="mt-2 w-full max-w-[600px] rounded-xl object-cover shadow-xl"
               src={project.image}
               alt={project.title}
             />
-            <div className="mt-2 text-sm opacity-50">{project.built_using}</div>
-            <div className="flex flex-row gap-4">
-              <LinkButton
-                link={project.live}
-                text="Live Demo"
-                icon={<Language />}
-              />
-              <LinkButton
-                link={project.github}
-                text={"GitHub"}
-                icon={<GitHub />}
-              />
+
+            <div className="mt-2 flex flex-row gap-2">
+              <LinkButton link={project.live} text="Live" icon={<Language />} />
+              {project.github_monorepo ? (
+                <LinkButton
+                  link={project.github_monorepo}
+                  text={"Monorepo"}
+                  icon={<GitHub />}
+                />
+              ) : null}
+
+              {project.github_client ? (
+                <LinkButton
+                  link={project.github_client}
+                  text={"Client"}
+                  icon={<GitHub />}
+                />
+              ) : null}
+
+              {project.github_server ? (
+                <LinkButton
+                  link={project.github_server}
+                  text={"Server"}
+                  icon={<GitHub />}
+                />
+              ) : null}
             </div>
           </li>
         ))}

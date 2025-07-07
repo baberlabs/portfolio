@@ -1,36 +1,25 @@
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 
 export default function ThemeToggler({ theme, setTheme }) {
-  function toggleTheme() {
-    setTheme((currentTheme) => {
-      const nextTheme = currentTheme === "light" ? "dark" : "light";
-      console.log(`theme toggled: ${nextTheme}`);
-      return nextTheme;
-    });
-  }
+  const isLight = theme === "light";
+  const buttonClass = `
+    fixed right-4 top-3 z-50 rounded-full border 
+    ${isLight ? "border-gray-200 bg-white/80" : "border-gray-700 bg-gray-900/80"}
+    p-2 transition-colors
+  `;
 
-  const className =
-    "fixed right-3 top-3 z-20 flex flex-row gap-4 rounded-full p-1 shadow-xl";
-
-  function LightModeButton() {
-    return (
-      <button onClick={toggleTheme} className={className}>
-        <MoonIcon className="w-6" />
-      </button>
-    );
-  }
-
-  function DarkModeButton() {
-    return (
-      <button onClick={toggleTheme} className={className}>
-        <SunIcon className="w-6" />
-      </button>
-    );
-  }
-
-  if (theme === "light") {
-    return <LightModeButton />;
-  } else {
-    return <DarkModeButton />;
-  }
+  return (
+    <button
+      onClick={() => setTheme(isLight ? "dark" : "light")}
+      className={buttonClass}
+      aria-label="Toggle theme"
+      title={`Switch to ${isLight ? "dark" : "light"} mode`}
+    >
+      {isLight ? (
+        <MoonIcon className="h-5 w-5 text-gray-700" />
+      ) : (
+        <SunIcon className="h-5 w-5 text-yellow-400" />
+      )}
+    </button>
+  );
 }
