@@ -4,13 +4,15 @@ import {
   IdentificationIcon,
   BookOpenIcon,
 } from "@heroicons/react/24/solid";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <header>
-      <h1 className="bg-background/80 text-text fixed left-0 top-0 z-20 flex w-full items-center justify-start border-b border-white/10 p-4 text-xl font-extrabold tracking-tight shadow-lg backdrop-blur-lg md:left-1/2 md:top-0 md:translate-x-[-50%] md:shadow-lg md:shadow-black/10">
-        Baber<span className="opacity-30">r</span>
+      <h1 className="bg-background/80 fixed left-0 top-0 z-20 flex w-full items-center justify-start border-b border-white/10 p-4 text-xl font-extrabold tracking-tight text-text shadow-lg backdrop-blur-lg md:left-1/2 md:top-0 md:translate-x-[-50%] md:shadow-lg md:shadow-black/10">
+        <Link to="/">
+          Baber<span className="opacity-30">r</span>
+        </Link>
       </h1>
       <Nav />
     </header>
@@ -46,7 +48,7 @@ function Nav() {
     },
   ];
   return (
-    <nav className="bg-background/80 text-text shadow-t fixed bottom-0 left-0 z-20 flex w-full flex-row items-center justify-around border-t border-white/10 py-2 shadow-2xl backdrop-blur-lg md:bottom-8 md:left-1/2 md:w-fit md:translate-x-[-50%] md:gap-4 md:rounded-2xl md:border-none md:px-6 md:py-4 md:shadow-2xl md:shadow-black/40">
+    <nav className="bg-background/80 shadow-t fixed bottom-0 left-0 z-20 flex w-full flex-row items-center justify-around border-t border-white/10 py-2 text-text shadow-2xl backdrop-blur-lg md:bottom-8 md:left-1/2 md:w-fit md:translate-x-[-50%] md:gap-4 md:rounded-2xl md:border-none md:px-6 md:py-4 md:shadow-2xl md:shadow-black/40">
       {navLinks.map((link) => (
         <NavLink
           key={link.text}
