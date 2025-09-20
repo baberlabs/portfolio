@@ -19,7 +19,7 @@ export const projects = [
     github_monorepo: "https://github.com/baberlabs/chatr",
     github_client: null,
     github_server: null,
-    live: "https://chatr-3b2a.onrender.com/",
+    live: "https://chatr.baberr.com/",
     image: imageChatr,
     built_using: ["React", "Tailwind", "Node.js", "MongoDB", "Socket.IO"],
     isPaired: false,
