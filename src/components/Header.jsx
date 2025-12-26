@@ -2,8 +2,8 @@ import {
   HomeIcon,
   BriefcaseIcon,
   IdentificationIcon,
-  BookOpenIcon,
 } from "@heroicons/react/24/solid";
+import { Article } from "@mui/icons-material";
 import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
@@ -32,14 +32,14 @@ function Nav() {
   const navLinks = [
     { text: "Home", href: "/", icon: <HomeIcon className={iconClass} /> },
     {
+      text: "About",
+      href: "/cv",
+      icon: <Article className={iconClass} />,
+    },
+    {
       text: "Projects",
       href: "/projects",
       icon: <BriefcaseIcon className={iconClass} />,
-    },
-    {
-      text: "Blog",
-      href: "/blog",
-      icon: <BookOpenIcon className={iconClass} />,
     },
     {
       text: "Contact",
