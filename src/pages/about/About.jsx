@@ -68,7 +68,9 @@ export default function CV() {
       <h2 className="hidden">CV</h2>
       <section className="flex flex-col gap-4">
         <h3 className="text-3xl font-black tracking-tight">Baber Khan</h3>
-        <p className="text-2xl opacity-80">Software Developer</p>
+        <p className="text-2xl opacity-80">
+          Computer Science Student · Software Developer
+        </p>
         <div className="relative flex w-fit flex-row items-center gap-2">
           <p>United Kingdom</p>
           <button
@@ -83,76 +85,82 @@ export default function CV() {
             <div className="minimal-shadow fadein-popup absolute left-0 top-10 flex w-64 flex-col gap-2 rounded bg-text p-4 text-sm text-background">
               <div className="flex flex-row items-center gap-1">
                 <LocationOn />
-                <p className="font-bold">Birmingham, UK</p>
+                <p className="font-bold">Based in Birmingham, UK</p>
               </div>
-              <p>
-                Prefer on-site in Birmingham, but open to remote work and
-                willing to relocate within the UK
-              </p>
+              <p>Prefer on-site in Birmingham, but open to remote work.</p>
             </div>
           )}
         </div>
         <div className="flex flex-row flex-wrap gap-2">
-          <Button
-            text="Email"
-            theme={theme}
-            icon={<Email />}
-            className="transition-all hover:scale-105"
-          />
-          <Button
-            text="GitHub"
-            theme={theme}
-            icon={<GitHub />}
-            className="transition-all hover:scale-105"
-          />
-          <Button
-            text="WhatsApp"
-            theme={theme}
-            icon={<WhatsApp />}
-            className="transition-all hover:scale-105"
-          />
-          <Button
-            text="LinkedIn"
-            theme={theme}
-            icon={<LinkedIn />}
-            className="transition-all hover:scale-105"
-          />
+          <a
+            href="mailto:bbrkhnn@outlook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              text="Email"
+              theme={theme}
+              icon={<Email />}
+              className="transition-all hover:scale-105"
+            />
+          </a>
+          <a
+            href="https://github.com/baberlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              text="GitHub"
+              theme={theme}
+              icon={<GitHub />}
+              className="transition-all hover:scale-105"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/baberr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              text="LinkedIn"
+              theme={theme}
+              icon={<LinkedIn />}
+              className="transition-all hover:scale-105"
+            />
+          </a>
         </div>
       </section>
 
       <Section>
         <Heading>Why I Am Here</Heading>
         <p>
-          My journey into technology began after two years of managing a local
-          shop. Though I had a diploma in computing, it wasn't until I started
-          learning web development in my free time that I found my true calling.
-          The basics of HTML, CSS, and JavaScript opened up a new world for me.
-          This self-study led me to join Northcoders' bootcamp, where I gained
-          solid skills in full-stack development.
+          I am currently studying BSc (Hons) Computer Science and building
+          software to develop a solid understanding of how systems work end to
+          end.
         </p>
         <p>
-          My background gives me a unique view of the tech world. From my time
-          in retail, I learned how to work with people and solve everyday
-          problems. Now, I combine these skills with my tech knowledge to build
-          useful software. I aim to create programs that meet real needs and are
-          easy for people to use.
+          Before entering full-time study, I worked in retail management while
+          teaching myself web development fundamentals. This led me to complete
+          the Northcoders Software Development bootcamp, where I gained hands-on
+          experience with full-stack applications, testing, and collaborative
+          development.
         </p>
         <p>
-          Each new project is a chance to use my mix of people skills and coding
-          ability. I focus on making things that work well and truly help users.
-          As I grow in this field, I want to work on projects that make a real
-          difference in how people use technology. My goal is to create software
-          that's both powerful and user-friendly, drawing on my understanding of
-          customer needs and good design.
+          My current focus is on strengthening fundamentals: programming
+          discipline, system boundaries, data flow, and correction. I am
+          intentionally moving away from surface-level feature building toward
+          deeper understanding of backend architecture, APIs, databases, and
+          application design.
         </p>
         <p>
-          To further improve my skills, I am starting BSc (Hons) Computer
-          Science starting this September (2025).
+          I am seeking environments that value clarity, correctness, and
+          long-term thinking over sleep alone.
         </p>
       </Section>
 
       <Section>
-        <Heading>Technologies I Can Use</Heading>
+        <Heading>Technical Foundations</Heading>
+        <p>I work primarily with the following technologies and concepts.</p>
         <List skills={skills} iconColor={iconColor}></List>
         <List>
           <ListItem textOnly text="Functional Programming" />
@@ -163,21 +171,22 @@ export default function CV() {
       </Section>
 
       <Section>
-        <Heading>What I Can Do</Heading>
+        <Heading>What I Can Work On</Heading>
         <p>
-          With these skills, I can build entire websites from the ground up. I
-          start by making the backend - that's the part of a website that users
-          don't see, but it's crucial for storing and managing data. I use a
-          method called test-driven development to make sure everything works
-          properly. Then, I create the frontend - the part of the website that
-          people interact with. I make sure it looks good and is easy to use.
+          I build full-stack applications with clearly defined boundaries
+          between frontend, backend, and infrastructure.
         </p>
         <p>
-          My knowledge of both frontend and backend makes me a full-stack
-          developer. This means I can work on all parts of a website. I enjoy
-          seeing a project through from start to finish, making sure all the
-          pieces fit together well. My goal is always to create websites that
-          are not only powerful but also simple for people to use.
+          On the backend, I design and implement REST APIs, authentication
+          flows, database schemas, and permission rules, with tests validating
+          behaviour and failure cases. On the frontend, I focus on predictable
+          state management, clear data flow, and interfaces that reflect backend
+          constraints accurately.
+        </p>
+        <p>
+          I prefer working through problems end to end, ensuring that each layer
+          of the system behaves correctly rather than masking issues behind
+          abstraction or UI workarounds.
         </p>
       </Section>
 
@@ -185,36 +194,27 @@ export default function CV() {
         <Heading>Projects I've Built</Heading>
         <ul className="flex flex-row flex-wrap gap-4 text-sm">
           <li className="h-fit w-fit rounded bg-blue-600 px-2 py-1 font-bold tracking-widest text-white">
-            SOLO by myself
+            INDIVIDUAL
           </li>
           <li className="h-fit w-fit rounded bg-purple-600 px-2 py-1 font-bold tracking-widest text-white">
-            PAIRED with a dev
+            COLLABORATIVE
           </li>
         </ul>
         <List projects={projects}></List>
       </Section>
 
       <Section>
-        <Heading>Beyond the Code</Heading>
+        <Heading>Outside of Work</Heading>
         <p>
-          My interests extend beyond the world of technology. As a child, I
-          often found myself lost in imagination, swinging a wooden stick on our
-          balcony under the moonlight. In my mind, I was wielding a powerful
-          sword, sending arc-like slashes through the air, much like the
-          characters in my favorite anime series.
+          Outside of software development, I read extensively and maintain
+          interest in fiction and long-form narrative writing. These interests
+          have shaped how I think about structure, consistency, and long-term
+          progression, which also informs how I approach complex software
+          systems.
         </p>
         <p>
-          This love for fantasy has stayed with me. I'm an avid reader of
-          Xianxia and Xuanhuan novels, genres that blend martial arts and
-          mysticism. I also enjoy fan fiction, particularly stories set in the
-          universes of Harry Potter, Marvel, Swallowed Star, Naruto, and One
-          Piece.
-        </p>
-        <p>
-          If you share a passion for fantasy or creative writing, I'd be
-          delighted to discuss it further. Who knows? We might even collaborate
-          on a fantasy novel someday. Feel free to reach out using any of the
-          contact methods provided at the top of this page.
+          I value focused, quiet work and environments that allow for sustained
+          attention and deep learning.
         </p>
       </Section>
     </section>
